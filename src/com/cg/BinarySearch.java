@@ -4,7 +4,7 @@ public class BinarySearch {
 
 	public static void main(String[] args) {
 		int[] ar = {2, 7, 9, 12};
-		int n = 8;
+		int n = 12;
 		int in = binarySearch(n, ar);
 
 		if (in == -1)
@@ -14,25 +14,39 @@ public class BinarySearch {
 
 	}
 	public static int binarySearch(int n, int[] ns) {
-		int index = 0;
+		int index = -1;;
 		int low = 0;
 		int high = ns.length - 1;
-		int mid = ns.length / 2;
+		System.out.println("high = " + high);
+		int mid = 0;
 		// System.out.printf("index : %d mid: %d high: %d ", index, mid, high);
-		if (n == ns[mid]) {
-			index = mid;
-		}
-		if (n < ns[mid]) {
-			high = mid;
-		} else {
-			low = mid + 1;
-		}
-		for (int i = low; i < high; i++) {
-			if (n == ns[i])
-				index = i;
-			else
-				index = -1;
+
+		while (low <= high) {
+			mid = low + ((high - low) / 2);
+			System.out.println("mid  = " + mid);
+			if (n == ns[mid]) {
+				index = mid;
+				break;
+			}
+			System.out.printf("index : %d mid: %d high: %d low: %d %n", index,
+					mid, high, low);
+			if (n < ns[mid]) {
+				System.out.printf("n is less then mid = %d high = %d ", mid,
+						high);
+				high = mid - 1;
+			} else if (n > ns[mid]) {
+				low = mid + 1;
+				System.out.printf("n is greater then mid , low = %d mid = %d ",
+						low, mid);
+
+			} else {
+
+				System.out.printf("index : %d mid: %d high: %d ", index, mid,
+						high);
+			}
+
 		}
 		return index;
+
 	}
 }
