@@ -1,11 +1,11 @@
-package com.cg;
+package com.cg.algo;
 
 import java.util.Arrays;
 
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int[] ar = {8, 4, 9, 7};
+		int[] ar = {8, 4, 9, 7, 5};
 		bubblesort(ar);
 
 	}

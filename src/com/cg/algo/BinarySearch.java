@@ -1,8 +1,14 @@
 
-package com.cg;
+package com.cg.algo;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class BinarySearch {
 
 	public static void main(String[] args) {
+		Map<Integer, Integer> map = new HashMap<>();
+		map.keySet();
 		int[] ar = {2, 7, 9, 12};
 		int n = 12;
 		int in = binarySearch(n, ar);
